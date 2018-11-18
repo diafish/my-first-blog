@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DiaFish</title>
+      {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static 'mainfiles/image/favicon.ico' %}" type="image/x-icon">
+    <style>
+        .fa {
+          padding: 8px;
+          font-size: 12px;
+          width: 24px;
+          text-align: center;
+          text-decoration: none;
+          margin: 3px 1px;
+        }
+        
+        .fa:hover {
+            opacity: 0.7;
+        }
+        
+        .fa-facebook {
+          background: #3B5998;
+          color: white;
+        }
+        .fa-instagram {
+  background: #125688;
+  color: white;
+}
+footer { 
+    display: block;
+}
+      </style>
+
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/"><h1>DiaFish</h1></a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="btn btn-secondary btn-lg" href="/" role="button">Главная страница</a>
+             </li>
+            <li class="nav-item active">
+                <a class="btn btn-light btn-lg" href="/portfolio" role="button">Портфолио</a>
+             </li>
+            <li class="nav-item active">
+                <a class="btn btn-info btn-lg" href="/contact" role="button">Контакты</a>
+             </li>
+           </ul>
+          <form class="form-inline mt-2 mt-md-0">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="btn btn-danger btn-lg" href="/admin" role="button">Панель администратора</a>
+             </li>
+           </ul>  
+          </form>
+         </div>
+      </nav>
+    </header>
+    <br><br><br>
+    <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3">{% include "main/includes/smth.html" %}</h1>
+            <p>
+              {% block head %}
+              {% endblock %}
+            </p>
+            <p>
+              {% block content %}
+              {% endblock %}
+            </p>
+            
+          </div>
+        </div>
+  
+        <div class="container">
+            {% block footer %}
+            {% endblock %}
+          <hr>
+          <footer class="mt-5">
+            <div class="container-fluid bg-faded mt-5">
+              <div class="container">
+                <div class="row py-3">
+                  <!-- footer column 1 start -->
+                  <div class="col-md-4">
+                    <!-- row start -->
+                    <div class="row py-2">
+                      <div class="col-sm-3 hidden-md-down">
+                      </div>
+                      <div class="col-sm-9">
+                        <h4>DiaFish</h4>
+                        <h5>Вся нужная информация <br>о нашей компании.</h5>
+                      </div>
+                    </div>
+                    <!-- row end -->
+                  </div>
+                  <!-- footer column 1 end -->
+                  <!-- footer column 2 start -->
+                  <div class="col-md-4">
+                    <!-- row start -->
+                    <div class="row py-2">
+                      <div class="col-sm-3 hidden-md-down">
+                        <a class="bg-circle bg-info" href="#">
+                          
+                        </a>
+                      </div>
+                      <div class="col-sm-9">
+                        <h4>Напишите нам :</h4>
+                        <p><a href="mailto:info@diafish.com" title="info@diafish.com" >info@diafish.com</a></p>
+                      </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row start -->
+                    <div class="row py-2">
+                      <div class="col-sm-3 hidden-md-down">
+                        <a class="bg-circle bg-info" href="#">
+                          
+                        </a>
+                      </div>
+                      <div class="col-sm-9">
+                        <h4>Наши лицензии <br>и сертификаты:</h4>
+                        <p class=""><a class=" " href="/portfolio">Лицензии и сертификаты</a></p>
+                      </div>
+                    </div>
+                    <!-- row end -->
+                  </div>
+                  <!-- footer column 2 end -->
+                  <!-- footer column 3 start -->
+                  <div class="col-md-4">
+                    <!-- row starting  -->
+                    <div class="row py-2">
+                      <div class="col-sm-3 hidden-md-down">
+                        <a class="bg-circle bg-danger" href="# ">
+                          
+                        </a>
+                      </div>
+                      <div class="col-sm-9">
+                        <h4>Социальные сети :</h4>
+                        <a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-instagram"></a>
+                      </div>
+                    </div>
+                    <!-- row ended -->
+                    <!-- row starting  -->
+                    <div class="row py-2">
+                      <div class="col-sm-3 hidden-md-down">
+                      </div>
+                      <div class="col-sm-9">
+                        <h5>Наш телеграммм <br>бот для заявок<br>на поставку<br>нашей продукции :</h5>
+                        <p><a class="btn btn-secondary btn-lg" href="https://t.me/diafishbot" role="button">Наш телеграмм бот</a></p>
+                      </div>
+                    </div>
+                    <!-- row ended -->
+                  </div>
+                  <!-- footer column 3 end -->
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="container-fluid bg-secondary py-3">
+                  <h5><br>© 2018 Company, Inc.</h5>
+                </footer>
+              </div>
+            </div>
+          </footer>
+          
+        </div> <!-- /container -->
+      </main> 
+
+</body>    
+</html>
